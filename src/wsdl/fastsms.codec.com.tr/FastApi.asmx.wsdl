@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SendSms">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="messageContent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgSpecialId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isOtn" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="headerCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="responseType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="optionalParameters" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSmsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendSmsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSmsTaxNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="taxno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="messageContent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgSpecialId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isOtn" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="headerCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="responseType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="optionalParameters" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSmsTaxNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendSmsTaxNoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSmsTckn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tckn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="messageContent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgSpecialId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isOtn" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="headerCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="responseType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="optionalParameters" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSmsTcknResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendSmsTcknResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="responseType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="optionalParameters" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSenderInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="responseType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="optionalParameters" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSenderInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSenderInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCredit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="optionalParameters" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCreditResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCreditResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OptionalParameterBuilder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="parametres" type="tns:ArrayOfKeyAndValue" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfKeyAndValue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="KeyAndValue" nillable="true" type="tns:KeyAndValue" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="KeyAndValue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="OptionalParameterBuilderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OptionalParameterBuilderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="int" type="s:int" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SendSmsSoapIn">
+    <wsdl:part name="parameters" element="tns:SendSms" />
+  </wsdl:message>
+  <wsdl:message name="SendSmsSoapOut">
+    <wsdl:part name="parameters" element="tns:SendSmsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendSmsTaxNoSoapIn">
+    <wsdl:part name="parameters" element="tns:SendSmsTaxNo" />
+  </wsdl:message>
+  <wsdl:message name="SendSmsTaxNoSoapOut">
+    <wsdl:part name="parameters" element="tns:SendSmsTaxNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendSmsTcknSoapIn">
+    <wsdl:part name="parameters" element="tns:SendSmsTckn" />
+  </wsdl:message>
+  <wsdl:message name="SendSmsTcknSoapOut">
+    <wsdl:part name="parameters" element="tns:SendSmsTcknResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSenderInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSenderInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetSenderInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSenderInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCreditSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCredit" />
+  </wsdl:message>
+  <wsdl:message name="GetCreditSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCreditResponse" />
+  </wsdl:message>
+  <wsdl:message name="OptionalParameterBuilderSoapIn">
+    <wsdl:part name="parameters" element="tns:OptionalParameterBuilder" />
+  </wsdl:message>
+  <wsdl:message name="OptionalParameterBuilderSoapOut">
+    <wsdl:part name="parameters" element="tns:OptionalParameterBuilderResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendSmsHttpGetIn">
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="sender" type="s:string" />
+    <wsdl:part name="phone" type="s:string" />
+    <wsdl:part name="messageContent" type="s:string" />
+    <wsdl:part name="msgSpecialId" type="s:string" />
+    <wsdl:part name="isOtn" type="s:string" />
+    <wsdl:part name="headerCode" type="s:string" />
+    <wsdl:part name="responseType" type="s:string" />
+    <wsdl:part name="optionalParameters" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendSmsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendSmsTaxNoHttpGetIn">
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="sender" type="s:string" />
+    <wsdl:part name="taxno" type="s:string" />
+    <wsdl:part name="messageContent" type="s:string" />
+    <wsdl:part name="msgSpecialId" type="s:string" />
+    <wsdl:part name="isOtn" type="s:string" />
+    <wsdl:part name="headerCode" type="s:string" />
+    <wsdl:part name="responseType" type="s:string" />
+    <wsdl:part name="optionalParameters" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendSmsTaxNoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendSmsTcknHttpGetIn">
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="sender" type="s:string" />
+    <wsdl:part name="tckn" type="s:string" />
+    <wsdl:part name="messageContent" type="s:string" />
+    <wsdl:part name="msgSpecialId" type="s:string" />
+    <wsdl:part name="isOtn" type="s:string" />
+    <wsdl:part name="headerCode" type="s:string" />
+    <wsdl:part name="responseType" type="s:string" />
+    <wsdl:part name="optionalParameters" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendSmsTcknHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusHttpGetIn">
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="responseType" type="s:string" />
+    <wsdl:part name="optionalParameters" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSenderInfoHttpGetIn">
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="responseType" type="s:string" />
+    <wsdl:part name="optionalParameters" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSenderInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCreditHttpGetIn">
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="optionalParameters" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCreditHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="SendSmsHttpPostIn">
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="sender" type="s:string" />
+    <wsdl:part name="phone" type="s:string" />
+    <wsdl:part name="messageContent" type="s:string" />
+    <wsdl:part name="msgSpecialId" type="s:string" />
+    <wsdl:part name="isOtn" type="s:string" />
+    <wsdl:part name="headerCode" type="s:string" />
+    <wsdl:part name="responseType" type="s:string" />
+    <wsdl:part name="optionalParameters" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendSmsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendSmsTaxNoHttpPostIn">
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="sender" type="s:string" />
+    <wsdl:part name="taxno" type="s:string" />
+    <wsdl:part name="messageContent" type="s:string" />
+    <wsdl:part name="msgSpecialId" type="s:string" />
+    <wsdl:part name="isOtn" type="s:string" />
+    <wsdl:part name="headerCode" type="s:string" />
+    <wsdl:part name="responseType" type="s:string" />
+    <wsdl:part name="optionalParameters" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendSmsTaxNoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendSmsTcknHttpPostIn">
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="sender" type="s:string" />
+    <wsdl:part name="tckn" type="s:string" />
+    <wsdl:part name="messageContent" type="s:string" />
+    <wsdl:part name="msgSpecialId" type="s:string" />
+    <wsdl:part name="isOtn" type="s:string" />
+    <wsdl:part name="headerCode" type="s:string" />
+    <wsdl:part name="responseType" type="s:string" />
+    <wsdl:part name="optionalParameters" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendSmsTcknHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusHttpPostIn">
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="responseType" type="s:string" />
+    <wsdl:part name="optionalParameters" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSenderInfoHttpPostIn">
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="responseType" type="s:string" />
+    <wsdl:part name="optionalParameters" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSenderInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCreditHttpPostIn">
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="optionalParameters" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCreditHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:portType name="FastApiSoap">
+    <wsdl:operation name="SendSms">
+      <wsdl:input message="tns:SendSmsSoapIn" />
+      <wsdl:output message="tns:SendSmsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSmsTaxNo">
+      <wsdl:input message="tns:SendSmsTaxNoSoapIn" />
+      <wsdl:output message="tns:SendSmsTaxNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSmsTckn">
+      <wsdl:input message="tns:SendSmsTcknSoapIn" />
+      <wsdl:output message="tns:SendSmsTcknSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <wsdl:input message="tns:GetStatusSoapIn" />
+      <wsdl:output message="tns:GetStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSenderInfo">
+      <wsdl:input message="tns:GetSenderInfoSoapIn" />
+      <wsdl:output message="tns:GetSenderInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCredit">
+      <wsdl:input message="tns:GetCreditSoapIn" />
+      <wsdl:output message="tns:GetCreditSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OptionalParameterBuilder">
+      <wsdl:input message="tns:OptionalParameterBuilderSoapIn" />
+      <wsdl:output message="tns:OptionalParameterBuilderSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="FastApiHttpGet">
+    <wsdl:operation name="SendSms">
+      <wsdl:input message="tns:SendSmsHttpGetIn" />
+      <wsdl:output message="tns:SendSmsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSmsTaxNo">
+      <wsdl:input message="tns:SendSmsTaxNoHttpGetIn" />
+      <wsdl:output message="tns:SendSmsTaxNoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSmsTckn">
+      <wsdl:input message="tns:SendSmsTcknHttpGetIn" />
+      <wsdl:output message="tns:SendSmsTcknHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <wsdl:input message="tns:GetStatusHttpGetIn" />
+      <wsdl:output message="tns:GetStatusHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSenderInfo">
+      <wsdl:input message="tns:GetSenderInfoHttpGetIn" />
+      <wsdl:output message="tns:GetSenderInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCredit">
+      <wsdl:input message="tns:GetCreditHttpGetIn" />
+      <wsdl:output message="tns:GetCreditHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="FastApiHttpPost">
+    <wsdl:operation name="SendSms">
+      <wsdl:input message="tns:SendSmsHttpPostIn" />
+      <wsdl:output message="tns:SendSmsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSmsTaxNo">
+      <wsdl:input message="tns:SendSmsTaxNoHttpPostIn" />
+      <wsdl:output message="tns:SendSmsTaxNoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSmsTckn">
+      <wsdl:input message="tns:SendSmsTcknHttpPostIn" />
+      <wsdl:output message="tns:SendSmsTcknHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <wsdl:input message="tns:GetStatusHttpPostIn" />
+      <wsdl:output message="tns:GetStatusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSenderInfo">
+      <wsdl:input message="tns:GetSenderInfoHttpPostIn" />
+      <wsdl:output message="tns:GetSenderInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCredit">
+      <wsdl:input message="tns:GetCreditHttpPostIn" />
+      <wsdl:output message="tns:GetCreditHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FastApiSoap" type="tns:FastApiSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendSms">
+      <soap:operation soapAction="http://tempuri.org/SendSms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSmsTaxNo">
+      <soap:operation soapAction="http://tempuri.org/SendSmsTaxNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSmsTckn">
+      <soap:operation soapAction="http://tempuri.org/SendSmsTckn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <soap:operation soapAction="http://tempuri.org/GetStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSenderInfo">
+      <soap:operation soapAction="http://tempuri.org/GetSenderInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCredit">
+      <soap:operation soapAction="http://tempuri.org/GetCredit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OptionalParameterBuilder">
+      <soap:operation soapAction="http://tempuri.org/OptionalParameterBuilder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FastApiSoap12" type="tns:FastApiSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendSms">
+      <soap12:operation soapAction="http://tempuri.org/SendSms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSmsTaxNo">
+      <soap12:operation soapAction="http://tempuri.org/SendSmsTaxNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSmsTckn">
+      <soap12:operation soapAction="http://tempuri.org/SendSmsTckn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <soap12:operation soapAction="http://tempuri.org/GetStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSenderInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetSenderInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCredit">
+      <soap12:operation soapAction="http://tempuri.org/GetCredit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OptionalParameterBuilder">
+      <soap12:operation soapAction="http://tempuri.org/OptionalParameterBuilder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FastApiHttpGet" type="tns:FastApiHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="SendSms">
+      <http:operation location="/SendSms" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSmsTaxNo">
+      <http:operation location="/SendSmsTaxNo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSmsTckn">
+      <http:operation location="/SendSmsTckn" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <http:operation location="/GetStatus" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSenderInfo">
+      <http:operation location="/GetSenderInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCredit">
+      <http:operation location="/GetCredit" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FastApiHttpPost" type="tns:FastApiHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="SendSms">
+      <http:operation location="/SendSms" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSmsTaxNo">
+      <http:operation location="/SendSmsTaxNo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSmsTckn">
+      <http:operation location="/SendSmsTckn" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <http:operation location="/GetStatus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSenderInfo">
+      <http:operation location="/GetSenderInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCredit">
+      <http:operation location="/GetCredit" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FastApi">
+    <wsdl:port name="FastApiSoap" binding="tns:FastApiSoap">
+      <soap:address location="https://fastsms.codec.com.tr/FastApi.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FastApiSoap12" binding="tns:FastApiSoap12">
+      <soap12:address location="https://fastsms.codec.com.tr/FastApi.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FastApiHttpGet" binding="tns:FastApiHttpGet">
+      <http:address location="https://fastsms.codec.com.tr/FastApi.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FastApiHttpPost" binding="tns:FastApiHttpPost">
+      <http:address location="https://fastsms.codec.com.tr/FastApi.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
